@@ -12,8 +12,10 @@ public class Order {
     @Id @GeneratedValue
     @Column(name = "ORDER_ID")
     private Long id;
-//    @Column(name = "MEMBER_ID")
-//    private Long memberId;
+
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    private Deliver deliver;
 
     @ManyToOne
     @JoinColumn(name = "MEMBER_ID")
@@ -68,5 +70,21 @@ public class Order {
 
     public void setMember(Member member) {
         this.member = member;
+    }
+
+    public Deliver getDeliver() {
+        return deliver;
+    }
+
+    public void setDeliver(Deliver deliver) {
+        this.deliver = deliver;
+    }
+
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
     }
 }

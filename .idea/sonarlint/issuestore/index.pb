@@ -13,3 +13,9 @@ e
 5src/main/java/jpabook/jpashop/domain/OrderStatus.java,6/2/6263648f9b5a55943c09d979922e8aaebe8b7604
 Z
 *src/main/java/jpabook/jpashop/JpaMain.java,d/8/d8078389fd62838fd61e9a23df1bf84f0a19134a
+a
+1src/main/java/jpabook/jpashop/domain/Deliver.java,2/b/2bb11dc7be15e79c7818dea6ee45d06eb5b1156d
+h
+8src/main/java/jpabook/jpashop/domain/DeliveryStatus.java,6/4/6464ee3d83fa647e1d123f78966b78d76ef25236
+b
+2src/main/java/jpabook/jpashop/domain/Category.java,7/c/7c325c56d88e2af5c4e8887edd3032a03187fd9c

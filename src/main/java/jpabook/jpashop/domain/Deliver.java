@@ -1,21 +1,23 @@
 package jpabook.jpashop.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
-public class Member {
-    @Id @GeneratedValue
-    @Column(name = "MEMBER_ID")
+public class Deliver {
+
+    @Id
+    @GeneratedValue
     private Long id;
-    private String name;
+
     private String city;
     private String street;
     private String zipcode;
 
-    // getter and setter short key => command + n (load constrcutors)
+    @Enumerated(EnumType.STRING)
+    private DeliveryStatus status;
+
+    @OneToOne(mappedBy = "deliver")
+    private Order order;
 
     public Long getId() {
         return id;
@@ -23,14 +25,6 @@ public class Member {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getCity() {
@@ -57,4 +51,21 @@ public class Member {
         this.zipcode = zipcode;
     }
 
+    public DeliveryStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(DeliveryStatus status) {
+        this.status = status;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
 }
+
+
